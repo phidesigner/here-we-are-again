@@ -2,7 +2,7 @@
 
 > Build a reproducible overdose-risk pipeline so model results can be tested, traced and evaluated reliably
 
-**Status:** Educational business case reconstructed from the notebook and prior discussion. The student confirms that the business case has been merged into `dev`; this has not been independently verified. It has not been independently approved or clinically validated. Open decisions are explicitly marked.
+**Status:** Educational business case reconstructed from the notebook and prior discussion. The student confirmed that the original business case was merged into `dev`; the updated version is pending this merge. It has not been independently approved or clinically validated. Open decisions are explicitly marked.
 
 ## 1. Business case
 
@@ -68,8 +68,10 @@
 4. Agree on batch versus on-demand serving, latency limits and cost expectations
 5. Verify data provenance, outcome definition, time horizon, access rights and privacy safeguards
 6. Estimate value and costs against a non-ML alternative; assign risk and fallback owners
-7. Obtain project-owner approval before treating this business case as finalized or suitable for operational use; the student reports it is already merged into `dev`
+7. Obtain project-owner approval before treating this business case as finalized or suitable for operational use
 
 ## 2. Starting a new coaching session
 
-Attach **this README**, `opiod_analysis_v01(2).ipynb`, and the amended `ai-prompt-kickoff-scaffold.md`. The README is the intended source for **business decisions**; the notebook supports **technical facts**. The separate `TEAM_BRIEF.md` records module agreements once reconciled with this README. Resolve business-case gaps before treating project setup as complete. Students should create repository files themselves in VS Code, with guided explanation, copy-paste snippets, tests and confirmation gates.
+Attach **this README**, the project notebook, and the latest `ai-prompt-kickoff-scaffold.md`. The README is the intended source for **business decisions**; the notebook supports **technical facts**. The separate `TEAM_BRIEF.md` records module agreements once reconciled with this README.
+
+Resolve business-case gaps before treating project setup as complete. Students should create repository files themselves in VS Code, with guided explanation, copy-paste snippets, tests and confirmation gates.
