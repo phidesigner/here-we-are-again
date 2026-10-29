@@ -2,7 +2,7 @@
 
 > Build a reproducible overdose-risk pipeline so model results can be tested, traced and evaluated reliably
 
-**Status:** Educational business-case draft reconstructed from the notebook and prior discussion. It has not been independently approved, clinically validated or confirmed as merged into `dev`. Open decisions are explicitly marked.
+**Status:** Educational business case reconstructed from the notebook and prior discussion. The student confirmed that the original business case was merged into `dev`; the updated version is pending this merge. It has not been independently approved or clinically validated. Open decisions are explicitly marked.
 
 ## 1. Business case
 
@@ -23,12 +23,12 @@
 | Type | Metric | Baseline | Target or threshold |
 | --- | --- | --- | --- |
 | Business key performance indicator | To be defined, linked to missed-risk cases or review outcomes | To be measured | To be agreed |
-| Primary ML metric | `recall` for `OD = 1` | Re-evaluate on validation data | **To be set before final evaluation** |
-| ML guardrail | `precision` | To be measured | To be agreed |
+| Primary ML metric | `recall` for `OD = 1` | Re-evaluate on validation data | **At least 0.80 on validation data (educational quality gate)** |
+| ML guardrail | `precision` | To be measured | **Report and monitor only; no numerical pass/fail threshold yet** |
 | Supporting metrics | `f1`, `roc_auc`, `specificity` | To be measured | Reported, not release gates yet |
 | Operational limits | Latency and cost per prediction | To be measured | To be agreed |
 
-**Confirmed decision:** Prioritize recall to reduce false negatives, while tracking precision to limit false alerts. No numerical release threshold has been approved.
+**Confirmed educational decisions:** Prioritize recall to reduce false negatives. Require validation recall of at least 0.80, and report precision without a numerical pass/fail threshold. These are teaching and evaluation choices, **not clinically validated deployment or release requirements**. A clinical precision guardrail and acceptable workload must be determined from operational evidence.
 
 ### Solution
 
@@ -64,12 +64,14 @@
 
 1. Confirm client, workflow, ownership and organizational maturity
 2. Measure or clearly estimate the **business** baseline and define the business KPI and target
-3. Set the numerical `recall` quality gate **before** final evaluation, plus a precision guardrail
+3. Establish clinically appropriate recall and precision requirements, including review capacity and false-alert costs; the 0.80 validation-recall gate is for education only
 4. Agree on batch versus on-demand serving, latency limits and cost expectations
 5. Verify data provenance, outcome definition, time horizon, access rights and privacy safeguards
 6. Estimate value and costs against a non-ML alternative; assign risk and fallback owners
-7. Obtain project-owner approval before treating this README as finalized and merged into `dev`
+7. Obtain project-owner approval before treating this business case as finalized or suitable for operational use
 
 ## 2. Starting a new coaching session
 
-Attach **this README**, `opiod_analysis_v01(2).ipynb`, and the amended `ai-prompt-kickoff-scaffold.md`. The README is the intended source for **business decisions**; the notebook supports **technical facts**. The separate `TEAM_BRIEF.md` records module agreements once reconciled with this README. Resolve business-case gaps before treating project setup as complete. Students should create repository files themselves in VS Code, with guided explanation, copy-paste snippets, tests and confirmation gates.
+Attach **this README**, the project notebook, and the latest `ai-prompt-kickoff-scaffold.md`. The README is the intended source for **business decisions**; the notebook supports **technical facts**. The separate `TEAM_BRIEF.md` records module agreements once reconciled with this README.
+
+Resolve business-case gaps before treating project setup as complete. Students should create repository files themselves in VS Code, with guided explanation, copy-paste snippets, tests and confirmation gates.
