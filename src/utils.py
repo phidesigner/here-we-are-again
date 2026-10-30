@@ -1,13 +1,12 @@
-"""
-utils.py  [Shared plumbing]
-===========================
-Purpose   Small, reusable read and write helpers
-Examples  read and write CSV files, save and load the model file
-Used by   load_data.py, main.py, infer.py, api.py (stage 3)
+"""Shared utilities for reading and saving data and models.
 
-Why it matters
-- One place for file I/O (Input/Output): fix a bug once, every module benefits
-- No business logic: if a helper knows your target column, it belongs elsewhere
-
-Tests     tests/test_utils.py (stage 2)
+Inputs: File paths, pandas DataFrames, and trained models.
+Outputs: Loaded data or models, and saved files.
+Used by: Data loading, training, and inference modules.
+Why: Keep file operations consistent across the pipeline.
 """
+
+from pathlib import Path
+
+import joblib
+import pandas as pd
